@@ -36,9 +36,10 @@ t1 = datetime.now()
 
 # Getting port range values from config.json
 try:
-    with open(get_absolute_path('../config.json')) as config_file:
+    # Adjusted path to move two levels up to find config.json
+    with open(get_absolute_path('../../config.json')) as config_file:
         config = json.load(config_file)
-        print get_absolute_path('../config.json')
+        print(get_absolute_path('../../config.json'))  # Optional, for debugging
     range_high = int(config['range']['high'])
     range_low = int(config['range']['low'])
     # defining number of threads running concurrently
